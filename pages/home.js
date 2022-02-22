@@ -13,7 +13,7 @@ const Home = () => {
     <div className="space-y-10 relative">
       <Head>
         <title>LinkedIn - Login</title>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.png" />
       </Head>
 
       <header className="flex justify-around items-center py-4">
