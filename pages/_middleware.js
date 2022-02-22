@@ -15,8 +15,4 @@ export async function middleware(req) {
       return NextResponse.redirect(url);
     }
   }
-
-  //   const url = req.nextUrl.clone();
-  //   url.pathname = "/";
-  //   return NextResponse.rewrite(url);
 }

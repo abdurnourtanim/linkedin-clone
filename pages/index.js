@@ -1,3 +1,4 @@
+import { signOut } from "next-auth/react";
 import Head from "next/head";
 
 export default function Home() {
@@ -9,7 +10,9 @@ export default function Home() {
         <link rel="icon" href="/favicon.png" />
       </Head>
 
-      <h1 className="text-3xl font-bold underline">Linkedin Clone</h1>
+      <button onClick={signOut} className="text-3xl font-bold underline">
+        Sign Out
+      </button>
     </div>
   );
 }
