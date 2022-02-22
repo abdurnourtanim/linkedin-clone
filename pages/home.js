@@ -3,6 +3,7 @@ import BusinessCenterIcon from "@mui/icons-material/BusinessCenterSharp";
 import ExploreIcon from "@mui/icons-material/Explore";
 import GroupIcon from "@mui/icons-material/Group";
 import OndemandVideoSharpIcon from "@mui/icons-material/OndemandVideoSharp";
+import Head from "next/head";
 import Image from "next/image";
 import React from "react";
 import HeaderLink from "../components/HeaderLink";
@@ -10,6 +11,11 @@ import HeaderLink from "../components/HeaderLink";
 const Home = () => {
   return (
     <div className="space-y-10 relative">
+      <Head>
+        <title>LinkedIn - Login</title>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+
       <header className="flex justify-around items-center py-4">
         <div className="relative w-36 h-10">
           <Image src="/logo.png" layout="fill" objectFit="contain" alt="logo" />
