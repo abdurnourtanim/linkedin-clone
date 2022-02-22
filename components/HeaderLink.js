@@ -1,6 +1,6 @@
 import React from "react";
 
-const HeaderLink = ({ Icon, text, avatar, feed, active, hidden }) => {
+const HeaderLink = ({ Icon, text, feed, active, avatar, hidden }) => {
   return (
     <div
       className={` ${
@@ -12,7 +12,16 @@ const HeaderLink = ({ Icon, text, avatar, feed, active, hidden }) => {
       }  ${active && "!text-black dark:!text-white"} `}
     >
       {avatar ? <Icon className="!h-7 !w-7 lg:!-mb-1" /> : <Icon />}
-      <h4 className={`text-sm`}>{text}</h4>
+      <h4
+        className={`text-sm ${
+          feed && "hidden lg:flex justify-center w-full mx-auto"
+        }`}
+      >
+        {text}
+      </h4>
+      {active && (
+        <span className="hidden lg:inline-flex h-0.5 w-[calc(100%+20px)] bg-black dark:bg-white rounded-t-full" />
+      )}
     </div>
   );
 };
