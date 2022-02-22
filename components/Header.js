@@ -6,16 +6,50 @@ import HomeRoundedIcon from "@mui/icons-material/HomeRounded";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import SearchRoundedIcon from "@mui/icons-material/SearchRounded";
 import { Avatar } from "@mui/material";
+import { motion } from "framer-motion";
+import { useTheme } from "next-themes";
 import Image from "next/image";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import HeaderLink from "./HeaderLink";
 
+const spring = {
+  type: "spring",
+  stiffness: 700,
+  damping: 30,
+};
+
 const Header = () => {
+  const [mounted, setMounted] = useState(false);
+  const { setTheme, resolvedTheme, theme } = useTheme();
+
+  // After mounting, we have access to the theme
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   return (
     <header className="sticky top-0 z-40 bg-white dark:bg-[#1D2226] flex items-center justify-around py-1.5 px-3 focus-within:shadow-lg">
       {/* left side  */}
       <div className="flex items-center space-x-2 w-full max-w-xs">
-        <Image src="/logo-blue.svg" alt="logo-white" width={45} height={45} />
+        {mounted && (
+          <>
+            {resolvedTheme === "dark" ? (
+              <Image
+                src="/logo-white.png"
+                alt="logo-white"
+                width={45}
+                height={45}
+              />
+            ) : (
+              <Image
+                src="/logo-blue.svg"
+                alt="logo-white"
+                width={45}
+                height={45}
+              />
+            )}
+          </>
+        )}
 
         <div className="flex items-center space-x-1 dark:md:bg-gray-700 py-2.5 px-4 rounded w-full">
           <SearchRoundedIcon />
@@ -36,17 +70,27 @@ const Header = () => {
         <HeaderLink Icon={NotificationsIcon} text="Notifications" feed />
         <HeaderLink Icon={Avatar} text="Me" feed avatar hidden />
         <HeaderLink Icon={AppsOutlinedIcon} text="Work" feed hidden />
-      </div>
 
-      {/* Dark mode toggle */}
+        {/* Dark mode toggle */}
+        {mounted && (
+          <div
+            className={`bg-gray-600 flex items-center px-0.5 rounded-full h-6 w-12 cursor-pointer flex-shrink-0 relative ${
+              resolvedTheme === "dark" ? "justify-end" : "justify-start"
+            }`}
+            onClick={() =>
+              setTheme(resolvedTheme === "dark" ? "light" : "dark")
+            }
+          >
+            <span className="absolute left-0">🌜</span>
+            <motion.div
+              className="w-5 h-5 bg-white rounded-full z-40"
+              layout
+              transition={spring}
+            />
 
-      <div
-        className={`bg-gray-600 flex items-center px-0.5 rounded-full h-6 w-12 cursor-pointer flex-shrink-0 relative `}
-      >
-        <span className="absolute left-0">🌜</span>
-        <div className="w-5 h-5 bg-white rounded-full z-40" layout />
-
-        <span className="absolute right-0.5">🌞</span>
+            <span className="absolute right-0.5">🌞</span>
+          </div>
+        )}
       </div>
     </header>
   );
