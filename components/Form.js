@@ -8,7 +8,7 @@ const Form = () => {
   const [input, setInput] = useState("");
   const [photoUrl, setPhotoUrl] = useState("");
   const { data: session } = useSession();
-  const { userName, email, image: userImg } = session.user;
+  const { name: username, email, image: userImg } = session.user;
   const [modalOpen, setModalOpen] = useRecoilState(modalState);
   const [handlePost, setHandlePost] = useRecoilState(handlePostState);
 
@@ -20,7 +20,7 @@ const Form = () => {
       body: JSON.stringify({
         input,
         photoUrl,
-        userName,
+        username,
         email,
         userImg,
         createdAt: new Date().toString(),
