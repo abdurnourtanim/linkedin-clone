@@ -5,7 +5,6 @@ import Input from "./Input";
 import Post from "./Post";
 
 const Feed = ({ posts }) => {
-  console.log(posts);
   const [realtimePosts, setRealtimePosts] = useState([]);
   const [handlePost, setHandlePost] = useRecoilState(handlePostState);
   const [useSSRPosts, setUseSSRPosts] = useRecoilState(useSSRPostsState);
@@ -24,7 +23,7 @@ const Feed = ({ posts }) => {
     };
 
     fetchPosts();
-  }, [setHandlePost, setUseSSRPosts]);
+  }, [handlePost]);
 
   return (
     <div className="space-y-6 pb-24 max-w-lg">

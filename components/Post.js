@@ -1,7 +1,6 @@
 import React from "react";
 
 const Post = ({ post }) => {
-  console.log(post);
   return (
     <div>
       <img src={post.photoUrl} />
