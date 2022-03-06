@@ -7,6 +7,8 @@ import React from "react";
 
 const Sidebar = () => {
   const { data: session } = useSession();
+  const randomImage =
+    "https://source.unsplash.com/1600x900/?nature,photography,technology";
 
   return (
     <div className="space-y-2 min-w-max max-w-lg">
@@ -14,7 +16,8 @@ const Sidebar = () => {
       <div className="bg-white dark:bg-[#1D2226] rounded-lg overflow-hidden relative flex flex-col items-center text-center border border-gray-300 dark:border-none">
         <div className="relative w-full h-14">
           <Image
-            src="/sidebar-cover-photo.png"
+            // src="/sidebar-cover-photo.png"
+            src={randomImage}
             alt="sidebar-cover"
             layout="fill"
             priority
