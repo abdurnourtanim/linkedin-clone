@@ -32,8 +32,6 @@ const Form = () => {
 
     const responseData = await response.json();
 
-    console.log(responseData);
-
     setHandlePost(true);
     setModalOpen(false);
   };

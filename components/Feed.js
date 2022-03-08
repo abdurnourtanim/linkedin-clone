@@ -23,6 +23,7 @@ const Feed = ({ posts }) => {
     };
 
     fetchPosts();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [handlePost]);
 
   return (
