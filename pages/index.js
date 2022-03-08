@@ -8,9 +8,10 @@ import Feed from "../components/Feed";
 import Header from "../components/Header";
 import Modal from "../components/Modal";
 import Sidebar from "../components/Sidebar";
+import Widgets from "../components/Widgets";
 import { connectToDatabase } from "../util/database";
 
-export default function Home({ posts }) {
+export default function Home({ posts, articles }) {
   const [modalOpen, setModalOpen] = useRecoilState(modalState);
   const [modalType, setModalType] = useRecoilState(modalTypeState);
 
@@ -37,6 +38,9 @@ export default function Home({ posts }) {
           <Sidebar />
           <Feed posts={posts} />
         </div>
+
+        <Widgets articles={articles} />
+
         <AnimatePresence>
           {modalOpen && (
             <Modal handleClose={() => setModalOpen(false)} type={modalType} />
@@ -69,10 +73,14 @@ export async function getServerSideProps(context) {
     .toArray();
 
   //  Get google news API
+  const result = await fetch(
+    `https://newsapi.org/v2/top-headlines?country=us&apiKey=${process.env.NEWS_API_KEY}`
+  ).then((res) => res.json());
 
   return {
     props: {
       session,
+      articles: result.articles,
       posts: posts.map((post) => ({
         _id: post._id.toString(),
         input: post.input,
