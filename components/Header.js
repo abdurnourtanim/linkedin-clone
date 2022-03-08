@@ -35,16 +35,14 @@ const Header = () => {
           <>
             {resolvedTheme === "dark" ? (
               <Image
-                // src="/logo-white.png"
-                src="https://rb.gy/bizvqj"
+                src="/logo-white.png"
                 alt="logo-white"
                 width={45}
                 height={45}
               />
             ) : (
               <Image
-                // src="/logo-blue.svg"
-                src="https://rb.gy/dpmd9s"
+                src="/logo-blue.svg"
                 alt="logo-white"
                 width={45}
                 height={45}
