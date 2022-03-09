@@ -19,7 +19,7 @@ export default function Home({ posts, articles }) {
   const { status } = useSession({
     required: true,
     onUnauthenticated() {
-      router.push("/home");
+      router.push("/login");
     },
   });
 
@@ -59,7 +59,7 @@ export async function getServerSideProps(context) {
     return {
       redirect: {
         permanent: false,
-        destination: "/home",
+        destination: "/login",
       },
     };
   }
