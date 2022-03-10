@@ -1,7 +1,7 @@
 import AddRoundedIcon from "@mui/icons-material/AddRounded";
 import BookmarkOutlinedIcon from "@mui/icons-material/BookmarkOutlined";
 import { Avatar } from "@mui/material";
-import { signOut, useSession } from "next-auth/react";
+import { useSession } from "next-auth/react";
 import Image from "next/image";
 import React from "react";
 
@@ -24,7 +24,6 @@ const Sidebar = () => {
           />
         </div>
         <Avatar
-          onClick={signOut}
           src={session?.user?.image}
           className="!h-14 !w-14 !border-2 !absolute !top-4 !cursor-pointer"
         />

@@ -3,10 +3,12 @@ import BusinessCenterIcon from "@mui/icons-material/BusinessCenter";
 import ChatIcon from "@mui/icons-material/Chat";
 import GroupIcon from "@mui/icons-material/Group";
 import HomeRoundedIcon from "@mui/icons-material/HomeRounded";
+import LogoutOutlinedIcon from "@mui/icons-material/LogoutOutlined";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import SearchRoundedIcon from "@mui/icons-material/SearchRounded";
 import { Avatar } from "@mui/material";
 import { motion } from "framer-motion";
+import { signOut } from "next-auth/react";
 import { useTheme } from "next-themes";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
@@ -64,7 +66,7 @@ const Header = () => {
       {/* right side  */}
       <div className="flex items-center space-x-6">
         <HeaderLink Icon={HomeRoundedIcon} text="Home" feed active />
-        <HeaderLink Icon={GroupIcon} text="My Network" feed />
+        <HeaderLink Icon={GroupIcon} text="My Network" feed hidden />
         <HeaderLink Icon={BusinessCenterIcon} text="Jobs" feed hidden />
         <HeaderLink Icon={ChatIcon} text="Messaging" feed />
         <HeaderLink Icon={NotificationsIcon} text="Notifications" feed />
@@ -91,6 +93,11 @@ const Header = () => {
             <span className="absolute right-0.5">🌞</span>
           </div>
         )}
+
+        {/* Logout */}
+        <button onClick={signOut}>
+          <HeaderLink Icon={LogoutOutlinedIcon} text="Sign out" feed />
+        </button>
       </div>
     </header>
   );
