@@ -72,6 +72,9 @@ const Header = () => {
         <HeaderLink Icon={NotificationsIcon} text="Notifications" feed />
         <HeaderLink Icon={Avatar} text="Me" feed avatar hidden />
         <HeaderLink Icon={AppsOutlinedIcon} text="Work" feed hidden />
+        <button onClick={signOut}>
+          <HeaderLink Icon={LogoutOutlinedIcon} text="Sign out" feed />
+        </button>
 
         {/* Dark mode toggle */}
         {mounted && (
@@ -93,11 +96,6 @@ const Header = () => {
             <span className="absolute right-0.5">🌞</span>
           </div>
         )}
-
-        {/* Logout */}
-        <button onClick={signOut}>
-          <HeaderLink Icon={LogoutOutlinedIcon} text="Sign out" feed />
-        </button>
       </div>
     </header>
   );
