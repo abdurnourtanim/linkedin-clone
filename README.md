@@ -2,6 +2,8 @@
 ## Linkedin clone 
 ![I'm Abdur Nour Tanim](https://scontent.fcgp3-1.fna.fbcdn.net/v/t39.30808-6/275753350_713341253364426_373927372052498692_n.jpg?_nc_cat=105&ccb=1-5&_nc_sid=5cd70e&_nc_eui2=AeEDvaG0T9j0U9Y7Nf1T-DVMLZmHZP-3xPYtmYdk_7fE9ke7GfQkNoPf2tMlEO9h72gHdn5m7D97SKb1r9fQoP_C&_nc_ohc=n3fJivrKkzIAX8tJSj_&_nc_ht=scontent.fcgp3-1.fna&oh=00_AT84Mzew9lNAif8K49Sk0XseR4waFpvhIzqTnYWl995YeQ&oe=62326B86)
 
+## working on vscode
+![I'm Abdur Nour Tanim](https://scontent.fcgp3-1.fna.fbcdn.net/v/t39.30808-6/275621037_713341213364430_8474755198422650355_n.jpg?_nc_cat=109&ccb=1-5&_nc_sid=5cd70e&_nc_eui2=AeExgBtiiH655IK8unXheIphFElK-0-Fl3wUSUr7T4WXfLeYCWbdeSB-WfLR9BfFxIKG-KnX83_BBuIbpCAMVm3C&_nc_ohc=EkhW2DUXQKcAX_hYlyD&_nc_ht=scontent.fcgp3-1.fna&oh=00_AT-fV6doiCvIdeof-KoWtQWct2Oq3HwtjgHQkZ2FENsAAA&oe=62336CB1)
 
 
 
